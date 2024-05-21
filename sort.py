@@ -13,7 +13,7 @@ def write_to_file(filename, content):
         file.writelines(content)
 
 def main():
-    folder_path = './'  # Укажите путь к папке с файлами
+    folder_path = './'  
     file_names = ['1.txt', '2.txt', '3.txt']
     
     files_info = []
@@ -23,7 +23,7 @@ def main():
         line_count = count_lines(full_path)
         files_info.append((file_name, line_count, read_file(full_path)))
     
-    # Сортировка файлов по количеству строк
+    
     files_info.sort(key=lambda x: x[1])
     
     result_content = []
@@ -32,7 +32,7 @@ def main():
         result_content.append(f"{file_name}\n")
         result_content.append(f"{line_count}\n")
         result_content.extend(lines)
-        result_content.append("\n")  # Добавляем пустую строку между файлами для удобочитаемости
+        result_content.append("\n")  
     
     write_to_file('result.txt', result_content)
 
